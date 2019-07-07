@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Incluir Participante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>QR Code</ion-card-title>
+          <ion-card-subtitle>Realize a leitura da pulseira do participante</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-button (click)="scanCode()">
+                Scan Code
+            </ion-button>
+            
+            <div *ngIf="scannedData">
+              <p>
+                Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+              </p>
+              <p>
+                Scanned Code Format : <b>{{ scannedData["format"] }}</b>
+              </p>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
