@@ -1,0 +1,137 @@
+<ion-content class="ion-text-center" color="primary">
+    <ion-card color="primary">
+        <ion-card-header>
+            <ion-card-title>Lista de Presença Pessoal</ion-card-title>           
+        </ion-card-header>
+    </ion-card>
+    <ion-card color="tertiary">
+    <ion-card-header>
+        <ion-card-title class="ion-text-center">Instruções</ion-card-title>
+        <ion-card-subtitle>
+            Esta lista mostra todos os participantes que foram registrados na atividade, informando sua identificação (ID lido pelo leitor de QR code).
+            Além disso, o item ao lado mostra se a presença do participante foi registrada na lista de presença online no Google Drive, pois 
+          as inscrições realizadas sem internet ficam somente no seu celular. 
+        </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+            <ion-item lines="none" color="tertiary">
+                <ion-label class="ion-text-center" text-wrap> 
+                    Para mandar a incrição do participante para a lista de presença online, clique no item ao lado do registro do participante.
+                    <br>Para mandar a inscrição de todos os participantes, clique em "Sincronizar".
+                    <br>Para ver a lista de presença online, clique no link "Acessar Lista de Presença Online".
+                    <br> Todas estas funcionalidades dependem de acesso a internet.
+                </ion-label>
+            </ion-item>
+    </ion-card-content>
+  </ion-card> 
+  <ion-card color="secondary">
+      <ion-card-header class="ion-text-center">
+          <ion-card-title color="light">Participantes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-list lines="none">
+              <ion-item >
+                  <ion-chip  item-content > 
+                      <ion-icon name="checkmark" color="secondary"></ion-icon>
+                      <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                      <ion-icon color="secondary" name="close"></ion-icon>
+                  </ion-chip>
+              </ion-item>
+              
+              <ion-item>
+                  <ion-chip  item-content> 
+                      <ion-icon name="send" color="tertiary"></ion-icon>
+                      <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                      <ion-icon color="secondary" name="close"></ion-icon>
+                  </ion-chip>
+              </ion-item>
+
+              <ion-item >
+                    <ion-chip  item-content > 
+                        <ion-icon name="checkmark" color="secondary"></ion-icon>
+                        <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                        <ion-icon color="secondary" name="close"></ion-icon>
+                    </ion-chip>
+                </ion-item>
+                
+                <ion-item>
+                    <ion-chip  item-content> 
+                        <ion-icon name="send" color="tertiary"></ion-icon>
+                        <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                        <ion-icon color="secondary" name="close"></ion-icon>
+                    </ion-chip>
+                </ion-item>
+
+                <ion-item >
+                        <ion-chip  item-content > 
+                            <ion-icon name="checkmark" color="secondary"></ion-icon>
+                            <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                            <ion-icon color="secondary" name="close"></ion-icon>
+                        </ion-chip>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-chip  item-content> 
+                            <ion-icon name="send" color="tertiary"></ion-icon>
+                            <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                            <ion-icon color="secondary" name="close"></ion-icon>
+                        </ion-chip>
+                    </ion-item>
+
+                    <ion-item >
+                            <ion-chip  item-content > 
+                                <ion-icon name="checkmark" color="secondary"></ion-icon>
+                                <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                                <ion-icon color="secondary" name="close"></ion-icon>
+                            </ion-chip>
+                        </ion-item>
+                        
+                        <ion-item>
+                            <ion-chip  item-content> 
+                                <ion-icon name="send" color="tertiary"></ion-icon>
+                                <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                                <ion-icon color="secondary" name="close"></ion-icon>
+                            </ion-chip>
+                        </ion-item>
+                        <ion-item >
+                                <ion-chip  item-content > 
+                                    <ion-icon name="checkmark" color="secondary"></ion-icon>
+                                    <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                                    <ion-icon color="secondary" name="close"></ion-icon>
+                                </ion-chip>
+                            </ion-item>
+                            
+                            <ion-item>
+                                <ion-chip  item-content> 
+                                    <ion-icon name="send" color="tertiary"></ion-icon>
+                                    <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                                    <ion-icon color="secondary" name="close"></ion-icon>
+                                </ion-chip>
+                            </ion-item>
+                            <ion-item >
+                                    <ion-chip  item-content > 
+                                        <ion-icon name="checkmark" color="secondary"></ion-icon>
+                                        <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                                        <ion-icon color="secondary" name="close"></ion-icon>
+                                    </ion-chip>
+                                </ion-item>
+                                
+                                <ion-item>
+                                    <ion-chip  item-content> 
+                                        <ion-icon name="send" color="tertiary"></ion-icon>
+                                        <ion-label color="secondary">ID do participante: 2345423454</ion-label>
+                                        <ion-icon color="secondary" name="close"></ion-icon>
+                                    </ion-chip>
+                                </ion-item>
+              
+          </ion-list>
+      </ion-card-content>
+  </ion-card>
+  <ion-button (click)="scanCode()" expand="block">
+      Sincronizar
+  </ion-button>
+  <ion-button [routerLink]="['/lista-presenca']" expand="block">
+     Acessar Lista de Presença Online
+  </ion-button>
+  <ion-button [routerLink]="['/incluir-participante']" color="secondary" expand="block">Voltar</ion-button>
+</ion-content>

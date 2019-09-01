@@ -1,0 +1,56 @@
+<ion-content class="ion-text-center" color="primary">
+  <ion-card color="primary">
+      <ion-card-header>
+          <ion-card-title>Gerenciar Participantes</ion-card-title>           
+      </ion-card-header>
+  </ion-card>
+  <ion-card color="tertiary">
+  <ion-card-header>
+      <ion-card-title class="ion-text-center">Instruções</ion-card-title>
+      <ion-card-subtitle>
+          Abaixo está a descrição da atividade, com informações sobre: tipo de atividade, horário de início e convidados.      
+      </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+          <ion-item lines="none" color="tertiary">
+              <ion-label class="ion-text-center" text-wrap> 
+                  Para registrar a presença do participante, utilize o leitor de QR code a partir do botão "Registrar Presença".<br>
+                  Para ver os participantes que você registrou, utilize o botão "Controle de Presença Pessoal".
+              </ion-label>
+          </ion-item>
+  </ion-card-content>
+  </ion-card> 
+  <ion-card color="secondary">
+    <ion-card-header class="ion-text-center">
+        <ion-card-title color="light">Dados do Participante</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item lines="none">
+          <ion-label position="floating" required>Nome Completo</ion-label>
+          <ion-input [(ngModel)]="participante.nome"></ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+            <ion-label position="floating" required>CPF</ion-label>
+            <ion-input [(ngModel)]="participante.cpf"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="participante.qrcode">
+            <ion-label position="floating" disabled >QR Code</ion-label>
+            <ion-input [(ngModel)]="participante.qrcode" ></ion-input>
+        </ion-item>
+
+        <ion-button (click)="scanCode()" expand="block">
+            Ler pulseira do Participante
+        </ion-button>
+       
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="cadastraParticipante()" expand="block" [routerLink]="['/listar-participantes']">
+      Salvar
+    </ion-button>
+    <ion-button (click)="excluiParticipante()" color="danger" expand="block"  *ngIf="participante.id" >
+        Excluir
+    </ion-button>
+    <ion-button  color="secondary" expand="block">Voltar</ion-button>
+</ion-content>

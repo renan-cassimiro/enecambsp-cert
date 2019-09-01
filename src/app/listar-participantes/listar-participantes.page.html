@@ -1,0 +1,22 @@
+<ion-content class="ion-text-center" color="primary">
+    <ion-card color="primary">
+        <ion-card-header>
+            <ion-card-title>Participantes Cadastrados</ion-card-title>           
+        </ion-card-header>
+    </ion-card>
+    <ion-card color="secondary">
+        <ion-card-content> 
+            <ion-list>
+                <ion-item *ngFor="let participante of participantes" >
+                    <ion-label (click)="editaParticipante(participante)">
+                        {{participante.nome}}
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+        
+    <ion-button [routerLink]="['/cadastro-participante']" expand="block">Cadastrar Participante</ion-button>
+    <ion-button [routerLink]="['/home']" color="secondary" expand="block">Voltar</ion-button>
+
+</ion-content>

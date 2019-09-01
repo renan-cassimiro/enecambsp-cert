@@ -1,3 +1,69 @@
+<<<<<<< HEAD
+<ion-content class="ion-text-center" color="primary">
+    <ion-card color="primary">
+        <ion-card-header>
+            <ion-card-title>Cronograma - VII ENECAmb</ion-card-title>           
+        </ion-card-header>
+    </ion-card>
+    <ion-card color="tertiary">
+        <ion-card-header>
+            <ion-card-title>Instruções</ion-card-title>
+            <ion-card-subtitle>
+                Segue abaixo a lista com os dias do evento destacando-se o dia atual - quando as presenças devem ser registradas. 
+                O controle pessoal de presença dos dias anteriores podem ser consultadas, assim como as atividades que ocorrerão nos dias posteriores. 
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+                <ion-item lines="none" color="tertiary">
+                    <ion-label class="ion-text-center"> 
+                        Hoje é 26/10/2019. <br>
+                        Estamos no 3º dia do VII ENECAmb.
+                    </ion-label>
+                </ion-item>
+        </ion-card-content>
+    </ion-card> 
+        
+    <ion-button *ngFor="let diaEvento of diasEvento" 
+       (click)="atividades(diaEvento.data)" size="large" expand="block" color="primary">
+        {{diaEvento.data.numeroOrdinal}} dia - {{diaEvento.data.data}}
+    </ion-button>
+
+
+    <!-- <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">
+        1º Dia - 24/10/2019
+    </ion-button>
+    
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">
+        2º Dia - 25/10/2019
+    </ion-button>
+
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="success">
+        3º Dia - 26/10/2019
+    </ion-button>
+
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">
+        4º Dia - 27/10/2019
+    </ion-button>
+
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">
+        5º Dia - 28/10/2019
+    </ion-button>
+
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">
+        6º Dia - 29/10/2019
+    </ion-button>
+    
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">
+        7º Dia - 30/10/2019
+    </ion-button>
+
+    <ion-button  [routerLink]="['/atividades']" size="large" expand="block" color="primary">           
+        8º Dia - 31/10/2019
+    </ion-button> -->
+
+    <ion-button [routerLink]="['/home']" color="secondary" expand="block">Voltar</ion-button>
+
+=======
 <ion-header>
   <ion-toolbar>
     <ion-title>VII ENECamb</ion-title>
@@ -47,4 +113,5 @@
               </ion-list>              
         </ion-card-content>
       </ion-card>      
+>>>>>>> 92a9e83a622c5153cac55c274fff3e27f68456e5
 </ion-content>

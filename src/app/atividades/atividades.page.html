@@ -1,3 +1,47 @@
+<<<<<<< HEAD
+<ion-content class="ion-text-center" color="primary">
+    <ion-card color="primary">
+        <ion-card-header>
+            <ion-card-title>Atividades do 3º dia</ion-card-title>           
+        </ion-card-header>
+    </ion-card>
+    <ion-card color="tertiary">
+        <ion-card-header>
+            <ion-card-title>Instruções</ion-card-title>
+            <ion-card-subtitle>
+                Procure na lista abaixo pela atividade desejada para registrar a presença dos participantes.    
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item lines="none" color="tertiary">
+                <ion-label class="ion-text-center" text-wrap> 
+                    Utilize o campo "Pesquisar" para facilitar sua busca.
+                </ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card> 
+  <ion-card color="secondary">
+      <ion-card-content>
+            <ion-searchbar></ion-searchbar> 
+          <ion-list>
+            <ion-item *ngFor="let atividade of atividades" (click)="incluiParticipante(atividade)">
+                <ion-thumbnail slot="start">
+                    <img *ngIf="atividade.tipoAtividade === 'PALESTRA'" src="https://s3.amazonaws.com/ionic-io-static/JGsvUGPTXmZQq5S9GSLx_148134.svg">
+                    <img *ngIf="atividade.tipoAtividade === 'OFINICA'" src="https://s3.amazonaws.com/ionic-io-static/H011glZRQYC545S3HM1T_1453880.svg">
+                    <img *ngIf="atividade.tipoAtividade === 'RODA_DE_CONVERSA'" src="https://s3.amazonaws.com/ionic-io-static/a3BXucDGSxevk7avFO2T_152506.svg">
+
+                </ion-thumbnail>
+                <ion-label>
+                  <h2>{{atividade.hora}} - {{atividade.tipoAtividade}} - {{atividade.pacote}}</h2>
+                  <p>{{atividade.titulo}}</p>
+                  <p>{{atividade.descricao}}</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>              
+      </ion-card-content>
+    </ion-card> 
+    <ion-button [routerLink]="['/cronograma']" color="secondary" expand="block">Voltar</ion-button>
+=======
 <ion-header>
   <ion-toolbar>
     <ion-title>Atividades - 24/10/2019</ion-title>
@@ -43,4 +87,5 @@
       </ion-card-content>
     </ion-card> 
     <ion-button [routerLink]="['/cronograma']" expand="block">Voltar</ion-button>
+>>>>>>> 92a9e83a622c5153cac55c274fff3e27f68456e5
 </ion-content>

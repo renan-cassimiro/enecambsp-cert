@@ -1,0 +1,29 @@
+<ion-content class="ion-text-center" color="primary">
+    <ion-grid style="height: 100%">
+      <ion-row justify-content-center align-items-center style="height: 100%">
+        <ion-card color="secondary">
+          <img src="..\assets\images\capa_enecamb.png" />
+          <ion-card-header>
+            <ion-card-title>Bem Vindo ao VII ENECAmb</ion-card-title>
+            <ion-card-subtitle>
+              Este aplicativo é utilizado em conjunto com a lista de presença manual
+              para registrar o compararecimento dos participantes nas atividades do VII ENECAmb.
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item lines="none">
+              <ion-label text-wrap class="ion-text-center">
+                Para iniciar, acesse o cronograma das atividades a partir do botão abaixo:
+              </ion-label>
+            </ion-item>
+            <ion-button [routerLink]="['/cronograma']" expand="block">
+              Cronograma
+            </ion-button>
+            <ion-button [routerLink]="['/listar-participantes']" expand="block">
+              Participantes
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
