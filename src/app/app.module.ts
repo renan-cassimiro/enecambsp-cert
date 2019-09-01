@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { FormsModule } from '@angular/forms';
 
-<<<<<<< HEAD
 import { IonicStorageModule } from '@ionic/storage';
 import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,25 +31,15 @@ import { ParticipantesService } from '../services/participantes/participantes.se
     IonicStorageModule.forRoot(),
     HttpClientModule
   ],
-=======
-@NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
->>>>>>> 92a9e83a622c5153cac55c274fff3e27f68456e5
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
-<<<<<<< HEAD
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     DatePipe,
     DiaEventoService,
     ToastService,
     ParticipantesService
-=======
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
->>>>>>> 92a9e83a622c5153cac55c274fff3e27f68456e5
   ],
   bootstrap: [AppComponent]
 })

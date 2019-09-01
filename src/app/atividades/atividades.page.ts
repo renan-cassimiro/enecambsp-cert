@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { AtividadesService, Atividade } from '../../services/atividades/atividades.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { DiaEvento } from '../../models/DiaEvento';
-=======
->>>>>>> 92a9e83a622c5153cac55c274fff3e27f68456e5
 
 @Component({
   selector: 'app-atividades',
@@ -13,7 +10,6 @@ import { DiaEvento } from '../../models/DiaEvento';
 })
 export class AtividadesPage implements OnInit {
 
-<<<<<<< HEAD
   atividades: Atividade [];
   diaEvento: DiaEvento;
   
@@ -33,11 +29,6 @@ export class AtividadesPage implements OnInit {
 
   incluiParticipante(atividade: Atividade){
     this.router.navigate(['/incluir-participante', atividade]);
-=======
-  constructor() { }
-
-  ngOnInit() {
->>>>>>> 92a9e83a622c5153cac55c274fff3e27f68456e5
   }
 
 }
