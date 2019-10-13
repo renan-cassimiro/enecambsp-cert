@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ToastService } from '../toast/toast.service';
 import { DiaEvento } from '../../models/DiaEvento';
+import { AmbienteService } from '../../services/ambiente/ambiente.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +12,17 @@ import { DiaEvento } from '../../models/DiaEvento';
 
 export class DiaEventoService {
 
-  private API_URL = "https://enecambsp-cert.herokuapp.com/";
-
-  constructor(private storage: Storage, private http: HttpClient, private toast: ToastService) { 
+  constructor(private storage: Storage, private http: HttpClient, private toast: ToastService,
+    private ambiente: AmbienteService) { 
 
   }
 
   public getAll() {
 
     new Promise((resolve, reject)=>{
-      let url = this.API_URL+"cronograma";
+      let url = this.ambiente.API_URL+"cronograma";
       
-      this.http.get(url)
+      this.http.post(url, {})
         .subscribe((result:any) =>{
           resolve(result);
         },

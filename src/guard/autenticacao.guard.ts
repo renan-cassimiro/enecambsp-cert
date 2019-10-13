@@ -15,6 +15,9 @@ export class AutenticacaoGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const currentUser = this.autenticacaoService.isLoggedIn;
 
+    //Login desabilitado
+    return true;
+
     if (currentUser) {
       // authorised so return true
       return true;

@@ -35,6 +35,16 @@
             <ion-input [(ngModel)]="participante.cpf"></ion-input>
         </ion-item>
 
+        <ion-item lines="none">
+            <ion-label position="floating" disabled >Pacote</ion-label>
+            <ion-select [(ngModel)]="participante.pacote" [interfaceOptions]="customAlertOptions" interface="action-sheet"
+              placeholder="Selecione o pacote" cancelText="Cancelar">
+                <ion-select-option value="f">Inscrição Completa</ion-select-option>
+                <ion-select-option value="m">Pacote Vivência</ion-select-option>
+            </ion-select>
+        </ion-item>
+        
+
         <ion-item lines="none" *ngIf="participante.qrcode">
             <ion-label position="floating" disabled >QR Code</ion-label>
             <ion-input [(ngModel)]="participante.qrcode" ></ion-input>
@@ -52,5 +62,5 @@
     <ion-button (click)="excluiParticipante()" color="danger" expand="block"  *ngIf="participante.id" >
         Excluir
     </ion-button>
-    <ion-button  color="secondary" expand="block">Voltar</ion-button>
+    <ion-button  color="secondary"  [routerLink]="['/listar-participantes']" expand="block">Voltar</ion-button>
 </ion-content>
