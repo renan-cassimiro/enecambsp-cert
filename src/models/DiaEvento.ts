@@ -1,5 +1,5 @@
 export class DiaEvento {
-    numeroOrdinal: string;
+    ordinal: string;
     data: string;
     nome: string
   }

@@ -1,29 +1,21 @@
 <ion-content class="ion-text-center" color="primary">
-        <ion-card color="primary">
-            <ion-card-header>
-                <ion-card-title>Inscrever Participante</ion-card-title>           
-            </ion-card-header>
-        </ion-card>
-        <ion-card color="tertiary">
-        <ion-card-header>
-            <ion-card-title class="ion-text-center">Instruções</ion-card-title>
-            <ion-card-subtitle>
-                Abaixo está a descrição da atividade, com informações sobre: tipo de atividade, horário de início e convidados.      
-            </ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-                <ion-item lines="none" color="tertiary">
-                    <ion-label class="ion-text-center" text-wrap> 
-                        Para registrar a presença do participante, utilize o leitor de QR code a partir do botão "Registrar Presença".<br>
-                        Para ver os participantes que você registrou, utilize o botão "Lista de Presença Pessoal".
-                    </ion-label>
-                </ion-item>
-        </ion-card-content>
+    <ion-card color="primary">
+        <ion-toolbar color="primary">
+            <ion-buttons slot="start">
+                <ion-back-button [text]="buttonText" defaultHref="\"></ion-back-button>
+            </ion-buttons>
+            <ion-title>Inscrição</ion-title>
+            <ion-buttons slot="end">
+                <ion-button (click)="abreAjuda()">
+                    <ion-icon color="tertiary" slot="icon-only" name="help-circle"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
     </ion-card> 
     <ion-card color="secondary">
         <ion-card-header class="ion-text-center">
             <img *ngIf="atividade.tipo === 'PALESTRA'" src="https://s3.amazonaws.com/ionic-io-static/JGsvUGPTXmZQq5S9GSLx_148134.svg">
-            <img *ngIf="atividade.tipo === 'OFINICA'" src="https://s3.amazonaws.com/ionic-io-static/H011glZRQYC545S3HM1T_1453880.svg">
+            <img *ngIf="atividade.tipo === 'OFICINA'" src="https://s3.amazonaws.com/ionic-io-static/H011glZRQYC545S3HM1T_1453880.svg">
             <img *ngIf="atividade.tipo === 'RODA_DE_CONVERSA'" src="https://s3.amazonaws.com/ionic-io-static/a3BXucDGSxevk7avFO2T_152506.svg">
 
             <ion-card-title color="light">{{atividade.titulo}}<br> {{atividade.hora}}</ion-card-title>
@@ -56,9 +48,9 @@
             </ion-item-sliding>
         </ion-card-content>
     </ion-card>
-    
-    <ion-button [routerLink]="['/lista-presenca']" expand="block">
+   
+      
+    <ion-button  (click)="abreListaPresenca()" expand="block">
         Lista de Presença Pessoal
-    </ion-button>
-    <ion-button [routerLink]="['/atividades']" color="secondary" expand="block">Voltar</ion-button>
+    </ion-button>   
 </ion-content>

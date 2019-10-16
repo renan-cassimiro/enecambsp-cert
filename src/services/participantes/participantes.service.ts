@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Atividade } from '../atividades/atividades.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastService } from '../toast/toast.service';
+import { AmbienteService } from '../ambiente/ambiente.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParticipantesService {
 
-  private API_URL = "https://enecambsp-cert.herokuapp.com/"
-
-  constructor(private http: HttpClient, private toast: ToastService) { }
+  constructor(private http: HttpClient, private toast: ToastService, 
+    private ambienteService: AmbienteService) { }
 
   public getAll() {
     let participantes: Participante[] = [];
 
     return new Promise((resolve, reject)=>{
-      let url = this.API_URL+"participantes";
+      let url = this.ambienteService.API_URL+"participantes";
       
       this.http.post(url, Participante)
         .subscribe((result:Participante[]) => {
@@ -30,7 +29,7 @@ export class ParticipantesService {
   }
 
   public getParticipanteByQrCode(participante: Participante){
-    let url = this.API_URL+"buscar-participante-qrcode";
+    let url = this.ambienteService.API_URL+"buscar-participante-qrcode";
     return new Promise((resolve, reject)=>{
        this.http.post(url, participante)
         .subscribe((result:Participante) =>{
@@ -49,7 +48,7 @@ export class ParticipantesService {
 
   public cadastraParticipante(participante: Participante){
     new Promise((resolve, reject)=>{
-      let url = this.API_URL+"cadastrar-participante";
+      let url = this.ambienteService.API_URL+"cadastrar-participante";
 
       this.http.post(url, participante)
         .subscribe((result:any) =>{
@@ -64,7 +63,7 @@ export class ParticipantesService {
 
   public excluiParticipante(participante: Participante){
     new Promise((resolve, reject)=>{
-      let url = this.API_URL+"excluir-participante";
+      let url = this.ambienteService.API_URL+"excluir-participante";
       
       this.http.post(url, participante)
         .subscribe((result:any) =>{

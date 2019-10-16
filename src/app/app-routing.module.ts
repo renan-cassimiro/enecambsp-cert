@@ -24,6 +24,7 @@ const routes: Routes = [
     canActivate: [AutenticacaoGuard] },
   { path: 'principal', 
     loadChildren: './principal/principal.module#PrincipalPageModule', canActivate: [AutenticacaoGuard] },
+
 ];
 
 @NgModule({

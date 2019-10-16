@@ -3,11 +3,14 @@ import {
   BarcodeScannerOptions,
   BarcodeScanner
 } from "@ionic-native/barcode-scanner/ngx";
-import { Route, ActivatedRoute } from '@angular/router';
+import { Route, ActivatedRoute, Router } from '@angular/router';
 import { AtividadesPage } from '../atividades/atividades.page';
-import { Atividade, AtividadesService } from '../../services/atividades/atividades.service';
+import { AtividadesService } from '../../services/atividades/atividades.service';
 import { Participante, ParticipantesService } from '../../services/participantes/participantes.service';
 import { Colaborador } from '../../models/colaborador';
+import { AjudaPage } from '../ajuda/ajuda.page';
+import { ModalController } from '@ionic/angular';
+import { Atividade } from '../../models/Atividade';
 
 @Component({
   selector: 'app-incluir-participante',
@@ -22,9 +25,13 @@ export class IncluirParticipantePage implements OnInit {
   participante: Participante;
   colaborador: Colaborador;
 
-  constructor(private barcodeScanner: BarcodeScanner, private route: ActivatedRoute,
-    private participanteService: ParticipantesService, private atividadeService: AtividadesService) {
-    //Options
+  constructor( private route: ActivatedRoute, 
+    private router: Router,
+    private barcodeScanner: BarcodeScanner, 
+    private participanteService: ParticipantesService, 
+    private atividadeService: AtividadesService,
+    private modalController: ModalController) {
+    
     this.barcodeScannerOptions = {
       showTorchButton: true,
       showFlipCameraButton: true
@@ -58,6 +65,10 @@ export class IncluirParticipantePage implements OnInit {
         console.log("Error", err);
       });
   }
+
+  abreListaPresenca(){
+    this.router.navigate(['/lista-presenca', this.atividade]);
+  }
  
   ngOnInit() {
     this.atividade = new Atividade();
@@ -69,6 +80,22 @@ export class IncluirParticipantePage implements OnInit {
       this.atividade.tipo = params['tipoAtividade'];
       this.atividade.titulo = params['titulo'];
     });
+  }
+
+  
+  async abreAjuda(){
+    const modal = await this.modalController.create({
+      component: AjudaPage,
+      componentProps: {
+        "subtitulo":  "Abaixo está a descrição da atividade, " +
+        "com informações sobre: tipo de atividade, horário de início e convidados.",
+        "mensagem": "Para registrar a presença do participante, utilize o leitor de QR " +
+        "code a partir do botão 'Registrar Presença'. \\n Para ver os participantes que " +
+        "você registrou, utilize o botão 'Lista de Presença Pessoal'."
+      }
+    });
+ 
+    return await modal.present();
   }
 
 }

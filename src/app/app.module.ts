@@ -19,9 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { DiaEventoService } from '../services/dia-evento/dia-evento.service';
 import { ToastService } from '../services/toast/toast.service'
 import { ParticipantesService } from '../services/participantes/participantes.service';
+import { AjudaPageModule } from './ajuda/ajuda.module';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule, 
@@ -29,7 +32,8 @@ import { ParticipantesService } from '../services/participantes/participantes.se
     AppRoutingModule,
     FormsModule,
     IonicStorageModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    AjudaPageModule
   ],
   providers: [
     StatusBar,
